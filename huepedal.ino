@@ -17,13 +17,13 @@ uint8_t lightHue = 0;
 
 void setup() {
   for (int p = 0; p < 5; p++){
-    pinMode([p], INPUT);
+    pinMode(p, INPUT);
   }
   pinMode(knob, INPUT);
   pinMode(DATA_PIN, OUTPUT);
 
   FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);
-  FastLED.setBrightness(255); // adjust this if too bright
+  FastLED.setBrightness(35); // 0-255 - adjust so it's not blinding
   leds[lightAddress].setHSV(0, 255, 255);
   FastLED.show();
 }
